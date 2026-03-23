@@ -6,8 +6,13 @@ import { Resend } from "resend";
 import crypto from "crypto";
 
 export async function POST(req: Request) {
-    const resend = new Resend(process.env.RESEND_API_KEY);
     try {
+        if (!process.env.RESEND_API_KEY) {
+            console.error("Missing RESEND_API_KEY environment variable");
+            return NextResponse.json({ message: "ระบบส่งอีเมลยังไม่ได้ตั้งค่า (Missing API Key)" }, { status: 500 });
+        }
+        
+        const resend = new Resend(process.env.RESEND_API_KEY);
         const { email } = await req.json();
 
         if (!email) {
