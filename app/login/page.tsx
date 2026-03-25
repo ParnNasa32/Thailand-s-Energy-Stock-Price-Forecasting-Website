@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { Loader2, Command, Sun, Moon, Eye, EyeOff } from 'lucide-react'
+import { Loader2, TrendingUp, Sun, Moon, Eye, EyeOff } from 'lucide-react'
 import { toast } from 'sonner'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
@@ -122,20 +122,24 @@ export default function LoginPage() {
                 </Button>
             </div>
 
-            <div className="relative z-10 w-full max-w-[400px] mx-auto flex flex-col items-center">
+            <div className="relative z-10 w-full max-w-[500px] sm:max-w-[600px] mx-auto flex flex-col items-center">
                 {/* Logo / Header */}
                 <div className="flex flex-col items-center mb-6 space-y-2 text-center">
-                    <div className="h-10 w-10 bg-primary/10 border border-primary/20 text-primary rounded-xl flex items-center justify-center mb-2 shadow-sm backdrop-blur-sm">
-                        <Command className="h-5 w-5" />
+                    <div className="h-12 w-12 bg-primary/10 border border-primary/20 text-primary rounded-xl flex items-center justify-center mb-2 shadow-sm backdrop-blur-sm">
+                        <TrendingUp className="h-6 w-6" />
                     </div>
-                    <h1 className="text-2xl font-semibold tracking-tight">ยินดีต้อนรับ</h1>
+                    <h1 className="text-2xl sm:text-2xl md:text-3xl font-bold tracking-tight pb-2">
+                        <span className="whitespace-nowrap">Thailand&apos;s Energy Stock Price</span><br />
+                        Forecasting Website
+                    </h1>
+                    <h2 className="text-xl font-semibold tracking-tight">ยินดีต้อนรับ</h2>
                     <p className="text-sm text-muted-foreground">
                         เข้าสู่ระบบบัญชีของคุณเพื่อดำเนินการต่อ
                     </p>
                 </div>
 
                 {/* Auth Card */}
-                <div className="relative w-full bg-card/60 dark:bg-black/60 backdrop-blur-xl text-card-foreground border border-border/50 shadow-2xl rounded-2xl overflow-hidden z-10">
+                <div className="relative w-full max-w-[400px] bg-card/60 dark:bg-black/60 backdrop-blur-xl text-card-foreground border border-border/50 shadow-2xl rounded-2xl overflow-hidden z-10">
                     <Tabs defaultValue="login" className="w-full">
                         <div className="p-6 pb-0">
                             <TabsList className="grid w-full grid-cols-2 bg-muted/50 p-1 rounded-lg">
@@ -169,7 +173,7 @@ export default function LoginPage() {
                                             type={showLoginPassword ? "text" : "password"}
                                             placeholder="••••••••"
                                             required
-                                            className="bg-background rounded-md h-10 pr-10"
+                                            className="bg-background rounded-md h-10 pr-10 [&::-ms-reveal]:hidden"
                                         />
                                         <button
                                             type="button"
@@ -211,7 +215,7 @@ export default function LoginPage() {
                                             type={showRegisterPassword ? "text" : "password"}
                                             placeholder="••••••••"
                                             required
-                                            className="bg-background rounded-md h-10 pr-10"
+                                            className="bg-background rounded-md h-10 pr-10 [&::-ms-reveal]:hidden"
                                         />
                                         <button
                                             type="button"
