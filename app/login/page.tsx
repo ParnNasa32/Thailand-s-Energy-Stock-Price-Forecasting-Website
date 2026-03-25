@@ -122,33 +122,41 @@ export default function LoginPage() {
                 </Button>
             </div>
 
-            <div className="relative z-10 w-full max-w-[500px] sm:max-w-[600px] mx-auto flex flex-col items-center">
-                {/* Logo / Header */}
-                <div className="flex flex-col items-center mb-6 space-y-2 text-center">
-                    <div className="h-12 w-12 bg-primary/10 border border-primary/20 text-primary rounded-xl flex items-center justify-center mb-2 shadow-sm backdrop-blur-sm">
-                        <TrendingUp className="h-6 w-6" />
-                    </div>
-                    <h1 className="text-2xl sm:text-2xl md:text-3xl font-bold tracking-tight pb-2">
-                        <span className="whitespace-nowrap">Thailand&apos;s Energy Stock Price</span><br />
-                        Forecasting Website
+            <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-24 px-4">
+                {/* Logo / Header (Left Side) */}
+                <div className="flex flex-col items-center lg:items-start space-y-4 text-center lg:text-left lg:w-1/2 w-full mt-15 sm:mt-0 md:mt-1">
+                    <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-5 sm:mb-10 md:mb-10">
+                        WELCOME
                     </h1>
-                    <h2 className="text-xl font-semibold tracking-tight">ยินดีต้อนรับ</h2>
-                    <p className="text-sm text-muted-foreground">
-                        เข้าสู่ระบบบัญชีของคุณเพื่อดำเนินการต่อ
+                    <h2 className="text-3xl sm:text-4xl font-bold tracking-tight leading-snug">
+                        Thailand&apos;s Energy Stock Price<br />
+                        Forecasting Website
+                    </h2>
+                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-lg">
+                        เครื่องมือช่วยวิเคราะห์และคาดการณ์แนวโน้มราคาหุ้นโดยใช้เทคโนโลยี<br className="hidden sm:block" />
+                        Machine Learning เพื่อให้นักลงทุนสามารถเข้าใจข้อมูลได้ง่าย<br className="hidden sm:block" />
+                        ลดความซับซ้อนในการวิเคราะห์และสนับสนุนการตัดสินใจลงทุนได้อย่างมีประสิทธิภาพ
                     </p>
                 </div>
 
-                {/* Auth Card */}
-                <div className="relative w-full max-w-[400px] bg-card/60 dark:bg-black/60 backdrop-blur-xl text-card-foreground border border-border/50 shadow-2xl rounded-2xl overflow-hidden z-10">
+                {/* Auth Card (Right Side) */}
+                <div className="relative w-full max-w-[420px] lg:w-1/2 bg-card/60 dark:bg-[#111111]/80 backdrop-blur-xl text-card-foreground border border-border/10 shadow-2xl rounded-[2.5rem] overflow-hidden z-10">
+                    <div className="p-8 pb-6 flex flex-col items-center text-center">
+                        <h2 className="text-3xl font-semibold tracking-tight mb-2">เข้าสู่ระบบ</h2>
+                        <p className="text-sm text-muted-foreground">
+                            เข้าสู่ระบบบัญชีของคุณเพื่อดำเนินการต่อ
+                        </p>
+                    </div>
+
                     <Tabs defaultValue="login" className="w-full">
-                        <div className="p-6 pb-0">
-                            <TabsList className="grid w-full grid-cols-2 bg-muted/50 p-1 rounded-lg">
-                                <TabsTrigger value="login" className="rounded-md data-[state=active]:bg-background data-[state=active]:border data-[state=active]:border-primary/50 data-[state=active]:shadow-sm transition-all">เข้าสู่ระบบ</TabsTrigger>
-                                <TabsTrigger value="register" className="rounded-md data-[state=active]:bg-background data-[state=active]:border data-[state=active]:border-primary/50 data-[state=active]:shadow-sm transition-all">สมัครสมาชิก</TabsTrigger>
+                        <div className="px-6 pb-0">
+                            <TabsList className="grid w-full grid-cols-2 bg-black/40 p-1 rounded-xl h-12">
+                                <TabsTrigger value="login" className="rounded-lg h-10 data-[state=active]:bg-[#222222] data-[state=active]:text-white transition-all">เข้าสู่ระบบ</TabsTrigger>
+                                <TabsTrigger value="register" className="rounded-lg h-10 data-[state=active]:bg-[#222222] data-[state=active]:text-white transition-all">สมัครสมาชิก</TabsTrigger>
                             </TabsList>
                         </div>
 
-                        <TabsContent value="login" className="p-6 pt-4 animate-in fade-in-50 duration-300">
+                        <TabsContent value="login" className="p-6 pt-6 animate-in fade-in-50 duration-300">
                             <form onSubmit={handleLogin} className="space-y-4">
                                 <div className="space-y-2">
                                     <Label htmlFor="username">ชื่อผู้ใช้ หรือ อีเมล</Label>
@@ -158,7 +166,7 @@ export default function LoginPage() {
                                         placeholder="ระบุชื่อผู้ใช้ หรือ อีเมล"
                                         autoComplete="username"
                                         required
-                                        className="bg-background rounded-md h-10"
+                                        className="bg-background/50 rounded-lg h-11 border-border/50"
                                     />
                                 </div>
                                 <div className="space-y-2">
@@ -173,7 +181,7 @@ export default function LoginPage() {
                                             type={showLoginPassword ? "text" : "password"}
                                             placeholder="••••••••"
                                             required
-                                            className="bg-background rounded-md h-10 pr-10 [&::-ms-reveal]:hidden"
+                                            className="bg-background/50 rounded-lg h-11 pr-10 border-border/50 [&::-ms-reveal]:hidden"
                                         />
                                         <button
                                             type="button"
@@ -185,7 +193,7 @@ export default function LoginPage() {
                                         </button>
                                     </div>
                                 </div>
-                                <Button className="w-full rounded-md mt-2" type="submit" disabled={isLoading}>
+                                <Button className="w-full rounded-lg mt-4 h-11 bg-foreground text-background hover:bg-foreground/90 font-medium text-base shadow-lg" type="submit" disabled={isLoading}>
                                     {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                                     เข้าสู่ระบบ
                                 </Button>
@@ -196,15 +204,15 @@ export default function LoginPage() {
                             <form onSubmit={handleRegister} className="space-y-4">
                                 <div className="space-y-2">
                                     <Label htmlFor="name">ชื่อ-นามสกุล</Label>
-                                    <Input id="name" name="name" placeholder="ชื่อ-นามสกุลของคุณ" required className="bg-background rounded-md h-10" />
+                                    <Input id="name" name="name" placeholder="ชื่อ-นามสกุลของคุณ" required className="bg-background/50 rounded-lg h-11 border-border/50" />
                                 </div>
                                 <div className="space-y-2">
                                     <Label htmlFor="reg-email">อีเมล</Label>
-                                    <Input id="reg-email" name="email" type="email" placeholder="example@email.com" required className="bg-background rounded-md h-10" />
+                                    <Input id="reg-email" name="email" type="email" placeholder="example@email.com" required className="bg-background/50 rounded-lg h-11 border-border/50" />
                                 </div>
                                 <div className="space-y-2">
                                     <Label htmlFor="reg-username">ชื่อผู้ใช้</Label>
-                                    <Input id="reg-username" name="username" placeholder="ตั้งชื่อผู้ใช้ของคุณ" required className="bg-background rounded-md h-10" />
+                                    <Input id="reg-username" name="username" placeholder="ตั้งชื่อผู้ใช้ของคุณ" required className="bg-background/50 rounded-lg h-11 border-border/50" />
                                 </div>
                                 <div className="space-y-2">
                                     <Label htmlFor="reg-password">รหัสผ่าน</Label>
@@ -215,7 +223,7 @@ export default function LoginPage() {
                                             type={showRegisterPassword ? "text" : "password"}
                                             placeholder="••••••••"
                                             required
-                                            className="bg-background rounded-md h-10 pr-10 [&::-ms-reveal]:hidden"
+                                            className="bg-background/50 rounded-lg h-11 pr-10 border-border/50 [&::-ms-reveal]:hidden"
                                         />
                                         <button
                                             type="button"
@@ -227,7 +235,7 @@ export default function LoginPage() {
                                         </button>
                                     </div>
                                 </div>
-                                <Button className="w-full rounded-md mt-2" type="submit" disabled={isLoading}>
+                                <Button className="w-full rounded-lg mt-4 h-11 bg-foreground text-background hover:bg-foreground/90 font-medium text-base shadow-lg" type="submit" disabled={isLoading}>
                                     {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                                     สมัครสมาชิก
                                 </Button>
@@ -249,7 +257,7 @@ export default function LoginPage() {
                         <div className="grid grid-cols-2 gap-3">
                             <Button
                                 variant="outline"
-                                className="w-full bg-background rounded-md text-foreground"
+                                className="w-full bg-background/50 border-border/50 rounded-lg h-11 text-foreground"
                                 disabled={isLoading}
                                 type="button"
                                 onClick={() => {
@@ -264,7 +272,7 @@ export default function LoginPage() {
                             </Button>
                             <Button
                                 variant="outline"
-                                className="w-full bg-background rounded-md text-foreground"
+                                className="w-full bg-background/50 border-border/50 rounded-lg h-11 text-foreground"
                                 disabled={isLoading}
                                 type="button"
                                 onClick={() => {
